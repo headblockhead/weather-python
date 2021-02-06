@@ -1,10 +1,4 @@
-import bs4
-from bs4 import BeautifulSoup
+from pprint import pprint
 import requests
-import pandas as pd
-from datetime import datetime
-url="https://www.bbc.co.uk/weather/2644688"
-page = requests.get(url)
-print(page)
-soup =  BeautifulSoup(page.content,'html.parser')
-print(soup)
+r = requests.get('http://api.openweathermap.org/data/2.5/weather?q=London&APPID={APIKEYHERE}')
+pprint(r.json())
